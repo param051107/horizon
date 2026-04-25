@@ -1,0 +1,28 @@
+.xp-toast {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-panel);
+  border: 1px solid var(--xp-color);
+  border-radius: 20px;
+  padding: 6px 14px;
+  box-shadow: 0 0 16px var(--xp-glow);
+  animation: xpFloat 2s var(--ease-smooth) forwards;
+  pointer-events: none;
+}
+
+.xp-plus {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--xp-color);
+}
+
+.xp-text {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--xp-color);
+  opacity: 0.7;
+  text-transform: uppercase;
+}

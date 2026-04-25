@@ -1,0 +1,37 @@
+.minimap {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease;
+}
+
+.minimap-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 8px 2px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.minimap svg {
+  display: block;
+}
+
+.minimap-zoom {
+  font-size: 8px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  padding: 2px 8px 4px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border-subtle);
+  text-align: right;
+}

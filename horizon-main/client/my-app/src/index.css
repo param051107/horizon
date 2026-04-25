@@ -1,0 +1,136 @@
+/* SkillDAG — Industrial Precision meets Organic Flow */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+:root {
+  /* Core Palette — Deep Obsidian + Electric Amber */
+  --bg-void: #0a0a0f;
+  --bg-surface: #11111a;
+  --bg-panel: #16161f;
+  --bg-hover: #1e1e2e;
+  --bg-active: #252538;
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-mid: rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.22);
+
+  /* Node State Colors */
+  --locked:     #2a2a3e;
+  --locked-fg:  #5a5a7a;
+  --locked-glow: rgba(90,90,122,0.3);
+
+  --unlocked:     #1a2a3e;
+  --unlocked-fg:  #5ab4ff;
+  --unlocked-glow: rgba(90,180,255,0.25);
+
+  --in-progress:     #2a1e10;
+  --in-progress-fg:  #ffaa44;
+  --in-progress-glow: rgba(255,170,68,0.35);
+
+  --complete:     #0e2a1a;
+  --complete-fg:  #44ffaa;
+  --complete-glow: rgba(68,255,170,0.3);
+
+  /* Accent */
+  --accent: #ff6b35;
+  --accent-dim: rgba(255,107,53,0.15);
+  --accent-glow: rgba(255,107,53,0.4);
+
+  --xp-color: #c084fc;
+  --xp-glow: rgba(192,132,252,0.3);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-primary: #e8e8f0;
+  --text-secondary: #8888aa;
+  --text-muted: #4a4a66;
+
+  /* Spacing */
+  --panel-width: 380px;
+  --header-h: 52px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-mid);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Utility */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pop {
+  0%   { transform: scale(0.9); opacity: 0; }
+  60%  { transform: scale(1.04); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+@keyframes xpFloat {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-48px); }
+}
+@keyframes dash-flow {
+  from { stroke-dashoffset: 20; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 12px var(--in-progress-glow); }
+  50%       { box-shadow: 0 0 24px var(--in-progress-glow), 0 0 48px var(--in-progress-glow); }
+}
