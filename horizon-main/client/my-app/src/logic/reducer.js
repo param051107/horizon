@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { wouldCreateCycle, recomputeUnlockStates } from "../server/dag";
+import { wouldCreateCycle, recomputeUnlockStates } from "./dag";
 
 export function reducer(state, action) {
   switch (action.type) {
